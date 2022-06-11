@@ -1,0 +1,86 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th6 11, 2022 lúc 04:58 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Cơ sở dữ liệu: `heartdisease`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `logic`
+--
+
+CREATE TABLE `logic` (
+  `id` int(11) NOT NULL,
+  `a` text NOT NULL,
+  `BMI` text NOT NULL,
+  `Smoking` text NOT NULL,
+  `AlcoholDrinking` text NOT NULL,
+  `Stroke` text NOT NULL,
+  `PhysicalHealth` text NOT NULL,
+  `MentalHealth` text NOT NULL,
+  `DiffWalking` text NOT NULL,
+  `Sex` text NOT NULL,
+  `AgeCategory` text NOT NULL,
+  `Race` text NOT NULL,
+  `Diabetic` text NOT NULL,
+  `PhysicalActivity` text NOT NULL,
+  `GenHealth` text NOT NULL,
+  `SleepTime` text NOT NULL,
+  `Asthma` text NOT NULL,
+  `KidneyDisease` text NOT NULL,
+  `SkinCancer` text NOT NULL,
+  `per` varchar(255) NOT NULL,
+  `updateon` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `logic`
+--
+
+INSERT INTO `logic` (`id`, `a`, `BMI`, `Smoking`, `AlcoholDrinking`, `Stroke`, `PhysicalHealth`, `MentalHealth`, `DiffWalking`, `Sex`, `AgeCategory`, `Race`, `Diabetic`, `PhysicalActivity`, `GenHealth`, `SleepTime`, `Asthma`, `KidneyDisease`, `SkinCancer`, `per`, `updateon`) VALUES
+(1, '0.003382344328693534', '0.08730837410676848', '0.3523802939009369', '-0.31988656683347766', '1.087171697621264', '0.09523284054814654', '0.07968028835825011', '0.30547358805685687', '-0.6776299617965629', '3.155100667569664', '0.2382843341534086', '0.4949080347319961', '-0.0286489793726129', '-2.0244144511385094', '-0.011309497551779976', '0.22493427029838017', '0.5914100333824389', '0.2744162021697548', '91.57', '10/6/2022-29:37:19'),
+(2, '0.003382344328693534', '0.08730837410676848', '0.3523802939009369', '-0.31988656683347766', '1.087171697621264', '0.09523284054814654', '0.07968028835825011', '0.30547358805685687', '-0.6776299617965629', '3.155100667569664', '0.2382843341534086', '0.4949080347319961', '-0.0286489793726129', '-2.0244144511385094', '-0.011309497551779976', '0.22493427029838017', '0.5914100333824389', '0.2744162021697548', '91.57', '10/6/2022-29:37:19'),
+(3, '0.003382344328693534', '0.08730837410676848', '0.3523802939009369', '-0.31988656683347766', '1.087171697621264', '0.09523284054814654', '0.07968028835825011', '0.30547358805685687', '-0.6776299617965629', '3.155100667569664', '0.2382843341534086', '0.4949080347319961', '-0.0286489793726129', '-2.0244144511385094', '-0.011309497551779976', '0.22493427029838017', '0.5914100333824389', '0.2744162021697548', '91.57', '10/6/2022-3:10:21');
+
+--
+-- Chỉ mục cho các bảng đã đổ
+--
+
+--
+-- Chỉ mục cho bảng `logic`
+--
+ALTER TABLE `logic`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `logic`
+--
+ALTER TABLE `logic`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
