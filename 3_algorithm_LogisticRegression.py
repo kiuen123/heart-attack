@@ -22,37 +22,30 @@ all_pred = lr.predict(X_test)
 score2 = lr.score(X_test,Y_test)
 print("Score of Logistic Regression : ",round(score2, 4)*100,"%")
 print(lr.coef_)
-import math
 
-test=0
-a = [1,0.75,1,0,0,0.3,0,1,0,1,1,1,0,0,1,1,0,0]
-for i in range(len(lr.coef_[0])):
-    test +=lr.coef_[0][i]*a[i]
-print(math.log10(test))
-
-# host = 'http://118.71.64.144:3001/api/add'
-# params = {
-#     "a":lr.coef_[0][0],
-#     "BMI":lr.coef_[0][1],
-#     "Smoking":lr.coef_[0][2],
-#     "AlcoholDrinking":lr.coef_[0][3],
-#     "Stroke":lr.coef_[0][4],
-#     "PhysicalHealth":lr.coef_[0][5],
-#     "MentalHealth":lr.coef_[0][6],
-#     "DiffWalking":lr.coef_[0][7],
-#     "Sex":lr.coef_[0][8],
-#     "AgeCategory":lr.coef_[0][9],
-#     "Race":lr.coef_[0][10],
-#     "Diabetic":lr.coef_[0][11],
-#     "PhysicalActivity":lr.coef_[0][12],
-#     "GenHealth":lr.coef_[0][13],
-#     "SleepTime":lr.coef_[0][14],
-#     "Asthma":lr.coef_[0][15],
-#     "KidneyDisease":lr.coef_[0][16],
-#     "SkinCancer":lr.coef_[0][17],
-#     "per":round(score2, 4)*100
-# }
-# response_code = requests.get(host, params=params)
-# response_result = (json.dumps(response_code.json(), indent=4))
-# print(response_code)
-# print(response_result)
+host = 'http://localhost:3001/api/add'
+params = {
+    "a":lr.coef_[0][0],
+    "BMI":lr.coef_[0][1],
+    "Smoking":lr.coef_[0][2],
+    "AlcoholDrinking":lr.coef_[0][3],
+    "Stroke":lr.coef_[0][4],
+    "PhysicalHealth":lr.coef_[0][5],
+    "MentalHealth":lr.coef_[0][6],
+    "DiffWalking":lr.coef_[0][7],
+    "Sex":lr.coef_[0][8],
+    "AgeCategory":lr.coef_[0][9],
+    "Race":lr.coef_[0][10],
+    "Diabetic":lr.coef_[0][11],
+    "PhysicalActivity":lr.coef_[0][12],
+    "GenHealth":lr.coef_[0][13],
+    "SleepTime":lr.coef_[0][14],
+    "Asthma":lr.coef_[0][15],
+    "KidneyDisease":lr.coef_[0][16],
+    "SkinCancer":lr.coef_[0][17],
+    "per":round(score2, 4)*100
+}
+response_code = requests.get(host, params=params)
+response_result = (json.dumps(response_code.json(), indent=4))
+print(response_code)
+print(response_result)

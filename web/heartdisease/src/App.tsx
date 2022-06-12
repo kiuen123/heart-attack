@@ -137,7 +137,8 @@ function App() {
                         values.hen * parseFloat(logicdata.Asthma) +
                         values.than * parseFloat(logicdata.KidneyDisease) +
                         values.SkinCancer * parseFloat(logicdata.SkinCancer);
-                    alert(res);
+                    let final= Math.log10(  (res))
+                    alert(final);
                 }}
             >
                 {() => (
