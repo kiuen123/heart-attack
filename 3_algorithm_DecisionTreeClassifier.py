@@ -29,4 +29,5 @@ print("Accuracy Score of Decision Tree Classifier  : ",round(accuracy_score(Y_te
 import matplotlib.pyplot as plt 
 from sklearn import tree
 # tree.plot_tree(dtc,max_depth=5,fontsize=10)
-# plt.show()
+# plt.show() 
+#ahihi
