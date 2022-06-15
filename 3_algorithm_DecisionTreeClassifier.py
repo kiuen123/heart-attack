@@ -1,9 +1,7 @@
 import numpy as np 
-import matplotlib.pyplot as plt 
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
-from sklearn import tree
 
 #load dataset
 data = pd.read_csv('1_data_working.csv',encoding='utf-8',sep=',')
@@ -17,8 +15,18 @@ Y_train, Y_test, X_train, X_test = train_test_split(data_Y, data_X, test_size=0.
 # khớp vào mẫu bằng cây phân lớp
 dtc = DecisionTreeClassifier(max_depth=5)
 dtc.fit(X_train, Y_train)
-y_pred5 = dtc.predict(X_test)
-score3 = dtc.score(X_test,Y_test)
-print("Score of Decision Tree Regressor  : ",round(score3, 4)*100,"%")
-tree.plot_tree(dtc,max_depth=5,fontsize=10)
-plt.show()
+all_pred = dtc.predict(X_test)
+
+from sklearn.metrics import recall_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import v_measure_score
+from sklearn.metrics import accuracy_score
+print("Recall Score of Decision Tree Classifier    : ",round(recall_score(Y_test,all_pred), 4)*100,"%")
+print("Precision Score of Decision Tree Classifier : ",round(precision_score(Y_test,all_pred), 4)*100,"%")
+print("Measure Score of Decision Tree Classifier   : ",round(v_measure_score(Y_test,all_pred), 4)*100,"%")
+print("Accuracy Score of Decision Tree Classifier  : ",round(accuracy_score(Y_test,all_pred), 4)*100,"%")
+
+import matplotlib.pyplot as plt 
+from sklearn import tree
+# tree.plot_tree(dtc,max_depth=5,fontsize=10)
+# plt.show()

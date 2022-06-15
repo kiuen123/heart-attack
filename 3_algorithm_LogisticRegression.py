@@ -1,10 +1,7 @@
-from urllib import response
 import numpy as np 
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-import requests
-import json
 
 #load dataset
 data = pd.read_csv('1_data_working.csv',encoding='utf-8',sep=',')
@@ -19,9 +16,22 @@ Y_train, Y_test, X_train, X_test = train_test_split(data_Y, data_X, test_size=0.
 lr = LogisticRegression(solver='lbfgs', max_iter=1000)
 lr.fit(X_train,Y_train)
 all_pred = lr.predict(X_test)
-score2 = lr.score(X_test,Y_test)
-print("Score of Logistic Regression : ",round(score2, 4)*100,"%")
-print(lr.coef_)
+
+from sklearn.metrics import recall_score
+from sklearn.metrics import precision_score
+from sklearn.metrics import v_measure_score
+from sklearn.metrics import accuracy_score
+print("Recall Score of Logistic Regression    : ",round(recall_score(Y_test,all_pred), 4)*100,"%")
+print("Precision Score of Logistic Regression : ",round(precision_score(Y_test,all_pred), 4)*100,"%")
+print("Measure Score of Logistic Regression   : ",round(v_measure_score(Y_test,all_pred), 4)*100,"%")
+print("Accuracy Score of Logistic Regression  : ",round(accuracy_score(Y_test,all_pred), 4)*100,"%")
+
+# print(lr.coef_)
+score2 = accuracy_score(Y_test,all_pred)
+
+from urllib import response
+import requests
+import json
 
 host = 'http://localhost:3001/api/add'
 params = {
