@@ -17,7 +17,7 @@ lr = LinearRegression()
 lr.fit(X_train,Y_train)
 all_pred = lr.predict(X_test)
 score2 = lr.score(X_test,Y_test)
-print("Accuracy Score of Linear Regression  : ",round(score2*100,"%")
+print("Accuracy Score of Linear Regression  : ",round(score2*100,"%"))
 
 # from sklearn.metrics import recall_score
 # from sklearn.metrics import precision_score
