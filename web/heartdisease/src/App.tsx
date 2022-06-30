@@ -138,7 +138,7 @@ function App() {
                         values.hen * parseFloat(logicdata.Asthma) +
                         values.than * parseFloat(logicdata.KidneyDisease) +
                         values.SkinCancer * parseFloat(logicdata.SkinCancer);
-                    let final= Math.log10(Math.exp(res))
+                    let final= 1/(1+Math.exp(-res));
                     // dòng 140 chưa chắc chắn
                     if(final>0.5) {
                         alert('Tỉ lệ mắc bệnh tim của bạn là : ' + final*100 +'% nguy cơ mắc bệnh của bạn cao với tỉ lệ chính xác là : ' + logicdata.per +'%')

@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-
+from matplotlib import pyplot as plt
 #load dataset
 data = pd.read_csv('1_data_working.csv',encoding='utf-8',sep=',')
 
@@ -17,13 +17,23 @@ lr = LinearRegression()
 lr.fit(X_train,Y_train)
 all_pred = lr.predict(X_test)
 score2 = lr.score(X_test,Y_test)
-print("Accuracy Score of Linear Regression  : ",round(score2*100,"%"))
+print("Accuracy Score of Linear Regression  : ",score2*100,"%")
+
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+
+# In ra các chỉ số liên quan
+print("Model Coefficients:", lr.coef_)
+print("Mean Absolute Error:", mean_absolute_error(Y_test, all_pred))
+print("Accuracy Score of Linear Regression  :", r2_score(Y_test, all_pred))
+
 
 # from sklearn.metrics import recall_score
 # from sklearn.metrics import precision_score
 # from sklearn.metrics import v_measure_score
-# from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score
 # print("Recall Score of Linear Regression    : ",round(recall_score(Y_test,all_pred), 4)*100,"%")
 # print("Precision Score of Linear Regression : ",round(precision_score(Y_test,all_pred), 4)*100,"%")
 # print("Measure Score of Linear Regression   : ",round(v_measure_score(Y_test,all_pred), 4)*100,"%")
-# print("Accuracy Score of Linear Regression  : ",round(accuracy_score(Y_test,all_pred), 4)*100,"%")
+print("Accuracy Score of Linear Regression  : ",round(r2_score(Y_test,all_pred), 6)*100,"%")
+
+
